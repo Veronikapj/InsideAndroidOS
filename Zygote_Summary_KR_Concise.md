@@ -22,8 +22,10 @@
 - 소켓 연결 대기
 
 ## COW 기법(Copy-on-Write)
+- https://code-lab1.tistory.com/58
 - 수정 전 원본 리소스 공유, 필요 시 실제 메모리 페이지 복사
 - ex) fork 시스템 호출 사용
+- 논란의 원문(170p 하단) : Even if some child process were to write on every single memory page (something that quite literally never happens), the cost of allocating the new memory is **amortized** over the life of the process. It is not incurred at initialization. 
 
 ## 애플리케이션 생성 과정
 - Zygote 복제(clone)로 새 프로세스 생성
@@ -44,7 +46,4 @@
     `-generate-debug-info` : 시스템이 업데이트 된 이후 dex2oat 에게 자기가 빌드하는 이미지에 디버그 정보 추가 
 
 
-## 시스템 서비스 시작
-- 필요 소켓 등록, 안드로이드 리소스 및 라이브러리 사전 로딩
-- 첫 애플리케이션 복제까지 프레임워크 로딩 비용 연기??
 
